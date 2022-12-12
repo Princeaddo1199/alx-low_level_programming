@@ -1,33 +1,32 @@
 #include <stdlib.h>
 #include <time.h>
-/* 
- * main - main function to generate a random number
+#include <stdio.h>
+
+/**
+ * main - entry point
  *
- *and whether it is greater than 5, less than 6, or 0.
  *
- * Return: Always 0 (Success)
+ * Return: always return 0
+ *
  */
 int main(void)
 {
 	int n;
+	int num;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	printf("Last digit of %d is ", n);
+	num = n % 10;
 
-	if (( % 10)  > 5)
+	if (num > 5)
 	{
-		printf("Last digit of %d is %d  and is greater than S\n", n, n %10);
-	}
-	else if ((n % 10) < 6 && (n % 10) ! =  0)
+		printf("Last digit of %d is %d and is greater than 5\n", n, num);
+	} else if (num == 0)
 	{
-		printf("Last digit of %d is %d  and is less than 6 and not 0\n", n, n % 10);
-	}
-	else
+		printf("Last digit of %d is %d and is 0\n", n, num);
+	} else
 	{
-		printf("Last digit of %d is %d  and s 0\n", n, n % 10);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, num);
 	}
 	return (0);
 }
-		
-
